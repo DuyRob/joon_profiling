@@ -1,5 +1,5 @@
 {% macro date_incremental(date_column, increment = 1 ,is_day_incremental = True) %}
-  {{ return(adapter.dispatch('date_incremental')( date_column, increment,is_day_incremental)) }}
+  {{ return(adapter.dispatch('date_incremental','joon_profiling')( date_column, increment,is_day_incremental)) }}
 {% endmacro %}
 
 {% macro snowflake__date_incremental(date_column, increment, is_day_incremental) %}
