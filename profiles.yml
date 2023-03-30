@@ -1,0 +1,15 @@
+joon_profiling:
+    target: dev
+    outputs:
+      dev:
+        type: snowflake
+        account: ig43812.us-east-2.aws
+        user: "{{ env_var('DBT_SNOWFLAKE_USER') }}"  # Replace with your username
+        password: "{{ env_var('DBT_SNOWFLAKE_PASSWORD') }}" # Replace with your password
+        role: TRANSFORMER
+        database: ANALYTICS
+        warehouse: ANALYTICS
+        schema: "{{ env_var('DBT_SNOWFLAKE_SCHEMA') }}" # Replace with your schema (like "bob_schema")
+        client_session_keep_alive: False
+        thread: 8
+  
